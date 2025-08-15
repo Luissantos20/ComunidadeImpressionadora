@@ -3,41 +3,30 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 import os
-import sqlalchemy
 
-# App
+# Configuração do app
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '1e34128f52ed4465e4be4734ed6b969d'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'chave_default_secreta')
 
-if os.getenv("DATABASE_URL"):
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+# Configuração do banco de dados
+database_url = os.getenv("DATABASE_URL")
+if database_url:
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 else:
+    # fallback para SQLite local, útil para desenvolvimento
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db'
 
-# Banco de dados
+# Inicialização das extensões
 database = SQLAlchemy(app)
-
-# Criptografia das senhas
 bcrypt = Bcrypt(app)
-
-# Login Manager
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'alert-info'
 
-from comunidadeimpressionadora import models
+# Importa modelos e rotas
+from comunidadeimpressionadora import models, routes
 
-# Verifica se a tabela existe
-engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
-inspector = sqlalchemy.inspect(engine)
-
-if not inspector.has_table("usuario"):
-    with app.app_context():
-        database.create_all()
-        print("Base de dados criada")
-else:
-    print("Base de dados já existente")
-
-# Routes
-from comunidadeimpressionadora import routes
-
+# Cria tabelas que ainda não existem (não apaga dados)
+with app.app_context():
+    database.create_all()
+    print("Tabelas criadas (somente se não existiam)")
