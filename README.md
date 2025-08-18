@@ -1,2 +1,26 @@
-# ComunidadeImpressionadora
-Site criado para que os alunos de uma plataforma de curso online possam interagir entre si, criando posts e especificando a qual curso pertencem
+# Comunidade Impressionadora
+Um sistema web em Flask para gerenciamento de usuários, autenticação, posts e perfis personalizados.  
+
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![Flask](https://img.shields.io/badge/flask-3.1.1-black.svg)
+![Postgres](https://img.shields.io/badge/PostgreSQL-15.0-blue.svg)
+
+## 📌 Sobre o Projeto
+O **Comunidade Impressionadora** é uma aplicação web construída em Flask que permite:
+- Criar e gerenciar usuários com autenticação (login e logout).
+- Editar perfis com upload de foto e cursos concluídos.
+- Criar, visualizar, editar e excluir posts.
+- Visualizar todos os usuários da comunidade.
+
+A aplicação foi desenvolvida com foco em aprendizado e prática de **Flask, SQLAlchemy, autenticação com Flask-Login e PostgreSQL/SQLite**.
+
+## 🖼️ Demonstração
+### Tela de Login
+![Tela de Login](static/readme_images/login.png)
+
+### Perfil do Usuário
+![Perfil](static/readme_images/perfil.png)
+
+### Feed de Posts
+![Feed](static/readme_images/feed.png)
+
