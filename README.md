@@ -75,7 +75,7 @@ A aplicação segue uma estrutura modular:
 - [Gunicorn](https://gunicorn.org/) (deploy)
 
 ## 🌐 Deploy
-A aplicação está disponível em produção no [Railway](https://railway.app/).
+A aplicação está disponível em produção no [Railway](https://comunidadeimpressionadora-production-8f70.up.railway.app).
 
 
 
