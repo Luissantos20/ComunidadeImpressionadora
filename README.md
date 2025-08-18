@@ -16,11 +16,16 @@ A aplicação foi desenvolvida com foco em aprendizado e prática de **Flask, SQ
 
 ## 🖼️ Demonstração
 ### Tela de Login
-![Tela de Login](static/readme_images/login.png)
+![Tela de Login](static/readme_images/tela_login.png)
 
 ### Perfil do Usuário
-![Perfil](static/readme_images/perfil.png)
+![Perfil](static/readme_images/meu_perfil.png)
+![Editar Perfil](static/readme_images/editar_perfil.png)
 
 ### Feed de Posts
-![Feed](static/readme_images/feed.png)
+![Feed](static/readme_images/home.png)
+![Editar post](static/readme_images/editar_post.png)
+
+### Listagem de Usuários
+![Feed](static/readme_images/usuarios.png)
 
