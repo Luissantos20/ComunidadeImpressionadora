@@ -14,6 +14,34 @@ O **Comunidade Impressionadora** é uma aplicação web construída em Flask que
 
 A aplicação foi desenvolvida com foco em aprendizado e prática de **Flask, SQLAlchemy, autenticação com Flask-Login e PostgreSQL/SQLite**.
 
+## ⚙️ Lógica de Desenvolvimento
+
+A aplicação segue uma estrutura modular:  
+
+### `__init__.py`
+- Cria e configura o app Flask.  
+- Define a conexão com o banco (variável `DATABASE_URL` para produção ou SQLite como fallback).  
+- Inicializa extensões como **SQLAlchemy**, **Bcrypt** e **LoginManager**.  
+- Garante a criação automática das tabelas caso não existam.  
+
+### `models.py`
+- Contém as classes **Usuario** e **Post**, mapeadas como tabelas no banco via SQLAlchemy.  
+- Relacionamento **1:N** (um usuário pode ter vários posts).  
+- Métodos auxiliares como `contar_posts()` para facilitar consultas.  
+
+### `forms.py`
+- Implementa formulários com validações robustas (email único, confirmação de senha, campos obrigatórios).  
+- Usa **Flask-WTF** e **WTForms** para simplificar validações e **CSRF protection**.  
+
+### `routes.py`
+- Define as rotas principais da aplicação (home, login, perfil, criar post, editar perfil, etc.).  
+- Utiliza **decorators de autenticação** (`@login_required`) para proteger rotas restritas.  
+- Inclui funções auxiliares como:  
+  - `salvar_imagem()`: redimensiona e salva fotos de perfil em `static/fotos_perfil/`.  
+  - `atualizar_cursos()`: processa checkboxes de cursos selecionados no perfil.  
+
+---
+
 ## ✅ Funcionalidades
 - [x] Criar conta e login de usuários
 - [x] Autenticação com Flask-Login
