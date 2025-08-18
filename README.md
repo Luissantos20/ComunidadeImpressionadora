@@ -14,6 +14,14 @@ O **Comunidade Impressionadora** é uma aplicação web construída em Flask que
 
 A aplicação foi desenvolvida com foco em aprendizado e prática de **Flask, SQLAlchemy, autenticação com Flask-Login e PostgreSQL/SQLite**.
 
+## ✅ Funcionalidades
+- [x] Criar conta e login de usuários
+- [x] Autenticação com Flask-Login
+- [x] Upload e atualização de foto de perfil
+- [x] Criar, editar e excluir posts
+- [x] Listagem de usuários
+- [ ] Área de administração (em breve)
+
 ## 🖼️ Demonstração
 ### Tela de Login
 ![Tela de Login](comunidadeimpressionadora/static/readme_images/tela_login.png)
@@ -28,4 +36,18 @@ A aplicação foi desenvolvida com foco em aprendizado e prática de **Flask, SQ
 
 ### Listagem de Usuários
 ![Feed](comunidadeimpressionadora/static/readme_images/usuarios.png)
+
+## 🛠 Tecnologias
+- [Python 3.12](https://www.python.org/)
+- [Flask 3.1.1](https://flask.palletsprojects.com/)
+- [Flask-Login](https://flask-login.readthedocs.io/)
+- [Flask-WTF](https://flask-wtf.readthedocs.io/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- [PostgreSQL](https://www.postgresql.org/) (produção) / SQLite (desenvolvimento)
+- [Gunicorn](https://gunicorn.org/) (deploy)
+
+## 🌐 Deploy
+A aplicação está disponível em produção no [Railway](https://railway.app/).
+
+
 
